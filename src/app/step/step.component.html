@@ -1,0 +1,27 @@
+<form [formGroup]="departmentForm" (submit)="addDepartment()" class="example-form">
+    <div class="row">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Company Name</mat-label>
+            <input formControlName="CompanyName" matInput>
+        </mat-form-field>
+
+        <div class="error" *ngIf="departmentForm.controls['CompanyName'].invalid && departmentForm.controls['CompanyName'].errors">Required Field</div>
+    </div>
+    <div class="row">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Department Name</mat-label>
+            <input formControlName="DepartmentName" matInput>
+        </mat-form-field>
+    </div>
+
+
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Location</mat-label>
+        <input formControlName="Location" matInput>
+    </mat-form-field>
+
+    <div class="btn-container">
+        <button mat-flat-button color="primary" type="reset">Reset</button>
+        <button mat-flat-button color="primary" type="submit">Save</button>
+    </div>
+</form>
